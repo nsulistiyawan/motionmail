@@ -7,17 +7,17 @@ use GuzzleHttp\Client as Client;
 
 class MotionMail
 {
-    //motion mail user  api key
+    //motion mail user api key
     protected $api_key;
-    //motion mail user  secret key
+    //motion mail user secret key
     protected $secret_key;
+    //guzzlehttp client
     protected $client;
 
     /**
      * Motionmail constructor.
-     *
-     * @param $client
-     * @param $log
+     * @param String $api_key
+     * @param String $secret_key
      */
     public function __construct($api_key, $secret_key)
     {
@@ -28,9 +28,7 @@ class MotionMail
 
     /**
      * Generate additional url for dynamic countdown.
-     *
-     * @param string $datetime date time of events, ex 2010-12-30 23:21:46
-     *
+     * @param string $datetime datetime in ISO 8601, ex 2010-12-30T23:21:46
      * @return mixed Additional url to be appended on motionmail link
      */
     public function generateDynamicDatetime($datetime)
